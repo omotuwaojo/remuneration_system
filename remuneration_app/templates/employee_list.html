@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee_list</title>
+</head>
+<body>
+    <!-- remuneration_app/templates/employee_list.html -->
+<h1>Employee List</h1>
+<form method="GET">
+    <input type="text" name="name" placeholder="Search by name">
+    <!-- Add more search fields if needed -->
+    <button type="submit">Search</button>
+</form>
+<!-- Sorting options -->
+<p>Sort by:
+    <a href="?sort=name">Name</a> |
+    <a href="?sort=salary">Salary</a> |
+    <a href="?sort=performance">Performance</a>
+</p>
+<!-- Display filtered employees -->
+<ul>
+    {% for employee in employees %}
+        <li>{{ employee.name }} - {{ employee.salary }} - {{ employee.performance_score }}</li>
+    {% endfor %}
+</ul>
+<!-- Display employees as link -->
+<ul>
+    {% for employee in employees %}
+        <li><a href="{% url 'employee_detail' employee.id %}">{{ employee.name }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

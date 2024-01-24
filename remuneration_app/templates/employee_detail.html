@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee_detail</title>
+</head>
+<body>
+    <!-- remuneration_app/templates/employee_detail.html -->
+        <h1>{{ employee.name }} Details</h1>
+        <p>Salary: ${{ employee.salary }}</p>
+        <p>Performance Score: {{ employee.performance_score }}</p>
+        <p>Bonus: ${{ bonus }}</p>
+<!-- Additional details and calculations can be included -->
+</body>
+</html>
